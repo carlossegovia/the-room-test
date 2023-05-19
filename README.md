@@ -65,8 +65,13 @@ To simulate streaming data from CSV files to Elasticsearch, run the following co
 ```bash
 docker exec -it <container_id_or_name> python /app/streaming_simulator.py <interval>
 ```
-
+Replace `<container_id_or_name>` with `the-room-test-flask_app-1`
 Replace `<interval>` with the desired interval in seconds between each record. This script will read data from CSV files located in the `dataset` directory and write them to Elasticsearch.
+
+Example: 
+```bash
+docker exec -it the-room-test-flask_app-1 python /app/streaming_simulator.py 5
+```
 
 ### Accessing the Endpoints
 
