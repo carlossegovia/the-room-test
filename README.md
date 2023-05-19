@@ -79,11 +79,18 @@ Once the containers are up and running, you can access the following endpoints t
 
 - **GET /videos**: Get trending videos.
 
-Example:
+Examples:
 
 ```bash
 curl http://localhost:5000/videos?param1=value1&param2=value2
+
+# Search by only one field
+curl http://localhost:5000/videos?video_id=gUkB5Kk4WAA
+
+# Search by multiples fields
+curl http://localhost:5000/videos\?trending_date\=17.27.11\&description\=for%20the
 ```
+
 
 - **GET /stats/{channel}**: Get aggregated statistics for a specific channel.
 
@@ -91,6 +98,9 @@ Example:
 
 ```bash
 curl http://localhost:5000/stats/channel-name
+
+curl http://localhost:5000/stats/Luisito%20Comunica
 ```
 
 Replace `channel-name` with the desired channel name.
+
