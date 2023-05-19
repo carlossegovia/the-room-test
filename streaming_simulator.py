@@ -6,9 +6,9 @@ from elasticsearch import Elasticsearch
 from elasticsearch.exceptions import RequestError
 
 # Elasticsearch connection
-es = Elasticsearch(hosts=['http://localhost:9200'])
+es = Elasticsearch(hosts=['http://elasticsearch:9200'])
 
-# Directory path containing the CSV files
+# Constants
 directory_path = './dataset/'
 index_name = 'trending_youtube_video_statistics'
 unique_field = 'video_id'

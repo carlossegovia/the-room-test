@@ -25,6 +25,18 @@ services:
     networks:
       - elastic
 
+  flask_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - target: 5000
+        published: 5000
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
+
 volumes:
   es_data:
     driver: local
