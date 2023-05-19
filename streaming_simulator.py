@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 import pandas as pd
@@ -124,5 +125,12 @@ def simulate_streaming_pandas(interval):
 
 
 if __name__ == '__main__':
+    interval_arg = sys.argv[1] if len(sys.argv) > 1 else None
+    try:
+        interval = int(interval_arg)
+    except (ValueError, TypeError):
+        print("Error: Invalid argument for 'interval'. Please provide an integer argument.")
+        sys.exit(1)
+
     create_index(index_name)
-    simulate_streaming_pandas(0)
+    simulate_streaming_pandas(interval)
