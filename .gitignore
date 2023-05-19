@@ -1,6 +1,5 @@
 .vscode
 *.json
 .idea
-dataset
 venv
 __pycache__/
